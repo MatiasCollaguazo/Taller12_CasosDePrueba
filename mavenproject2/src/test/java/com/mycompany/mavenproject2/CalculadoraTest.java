@@ -1,19 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
- */
 package com.mycompany.mavenproject2;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author CltControl
+ * @author Grupo#2
  */
 public class CalculadoraTest {
     
@@ -45,7 +43,7 @@ public class CalculadoraTest {
         double expResult = 0.0;
         double result = instance.suma(a, b);
         assertEquals(expResult, result, 0);
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
     
     @Test
@@ -178,7 +176,7 @@ public class CalculadoraTest {
         double expResult = 0.0;
         double result = instance.multiplicacion(a, b);
         assertEquals(expResult, result, 0);
-        //("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
     
     @Test
@@ -189,7 +187,7 @@ public class CalculadoraTest {
         Calculadora instance = new Calculadora();
         double expResult = 11.34;
         double result = instance.multiplicacion(a, b);
-        assertEquals(expResult, result, 0000000000002);
+        assertEquals(expResult, result, 0.0000000000002);
     }
 
     @Test
@@ -207,25 +205,14 @@ public class CalculadoraTest {
     public void testMultiplicacion3() {
         System.out.println("multiplicacion");
         double a = 4.0;
-        double b = 2.0 ;
+        double b = -2.0 ;
         Calculadora instance = new Calculadora();
-        double expResult = 8.0;
+        double expResult = -8.0;
         double result = instance.multiplicacion(a, b);
         assertEquals(expResult, result, 0);
     }
     @Test
     public void testMultiplicacion4() {
-        System.out.println("multiplicacion");
-        double a = 4.0;
-        double b = 0.0 ;
-        Calculadora instance = new Calculadora();
-        double expResult = 0.0;
-        double result = instance.multiplicacion(a, b);
-        assertEquals(expResult, result, 0);
-    }
-
-    @Test
-    public void testMultiplicacion5() {
         System.out.println("multiplicacion");
         double a = 4.0;
         double b = 0.0 ;
@@ -248,51 +235,136 @@ public class CalculadoraTest {
     }
 
     @Test
+    public void testDivision1() {
+            System.out.println("TCD01");
+            double a = 4.0;
+            double b = 2.0;
+            Calculadora instance = new Calculadora();
+            double expResult = 2.0;
+            double result = instance.division(a, b);
+            assertEquals(expResult, result, 0);
+            //fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testDivision2() {
+            System.out.println("TCD02");
+            double a = -6.0;
+            double b = 3.0;
+            Calculadora instance = new Calculadora();
+            double expResult = -2.0;
+            double result = instance.division(a, b);
+            assertEquals(expResult, result, 0);
+            //fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testDivision3() {
+            System.out.println("TCD03");
+            double a = -9.0;
+            double b = -3.0;
+            Calculadora instance = new Calculadora();
+            double expResult = 3.0;
+            double result = instance.division(a, b);
+            assertEquals(expResult, result, 0);
+            //fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testDivision4() {
+            System.out.println("TCD04");
+            double a = 2.0;
+            double b = 0.0;
+            Calculadora instance = new Calculadora();
+            // Verifica que se lanza ArithmeticException al dividir por cero
+            ArithmeticException assertThrows = assertThrows(ArithmeticException.class, () -> {
+                instance.division(a, b);
+            });
+            // fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testDivision5() {
+            System.out.println("TCD05");
+            double a = 7.0;
+            double b = 2.0;
+            Calculadora instance = new Calculadora();
+            double expResult = 3.5;
+            double result = instance.division(a, b);
+            assertEquals(expResult, result, 0);
+            fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testDivision6() {
+            System.out.println("TCD05");
+            double a = 0.0;
+            double b = 0.0;
+            Calculadora instance = new Calculadora();
+            double expResult = 0.0;
+            double result = instance.division(a, b);
+            assertEquals(expResult, result, 0);
+            fail("The test case is a prototype.");
+    }
+    
+        @Test
+    public void testDivision7() {
+            System.out.println("TCD05");
+            double a = 7.0;
+            double b = 2.0;
+            Calculadora instance = new Calculadora();
+            double expResult = 3.5;
+            double result = instance.division(a, b);
+            assertEquals(expResult, result, 0);
+            fail("The test case is a prototype.");
+    }
+    
+    @Test
     public void testExponenciacion1() {
-        System.out.println("exponenciacion");
+        System.out.println("TCE01");
         double base = 2.0;
         double exponente = 3.0;
         Calculadora instance = new Calculadora();
         double expResult = 8.0;
         double result = instance.exponenciacion(base, exponente);
         assertEquals(expResult, result, 0);
-        }
+    }
 
 
     @Test
         public void testExponenciacion2() {
-        System.out.println("exponenciacion");
-        double base = 2.0;
-        double exponente = 0.0;
-        Calculadora instance = new Calculadora();
-        double expResult = 1.0;
-        double result = instance.exponenciacion(base, exponente);
-        assertEquals(expResult, result, 0);
+            System.out.println("TCE02");
+            double base = 2.0;
+            double exponente = 0.0;
+            Calculadora instance = new Calculadora();
+            double expResult = 1.0;
+            double result = instance.exponenciacion(base, exponente);
+            assertEquals(expResult, result, 0);
         }
 
 
     @Test
-        public void testExponenciacion3() {
-        System.out.println("exponenciacion");
+    public void testExponenciacion3() {
+        System.out.println("TCE03");
         double base = 2.0;
         double exponente = -3.0;
         Calculadora instance = new Calculadora();
         double expResult = 0.125;
         double result = instance.exponenciacion(base, exponente);
         assertEquals(expResult, result, 0);
-        }
+    }
 
 
-@Test
-public void testExponenciacion4() {
-System.out.println("exponenciacion");
-double base = -2.0;
-double exponente = 2.0;
-Calculadora instance = new Calculadora();
-double expResult = 4.0;
-double result = instance.exponenciacion(base, exponente);
-assertEquals(expResult, result, 0);
-}
+    @Test
+    public void testExponenciacion4() {
+        System.out.println("TCE04");
+        double base = -2.0;
+        double exponente = 2.0;
+        Calculadora instance = new Calculadora();
+        double expResult = 4.0;
+        double result = instance.exponenciacion(base, exponente);
+        assertEquals(expResult, result, 0);
+    }
     
     @Test
     public void testRadicacion() {

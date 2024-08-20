@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.mavenproject2;
 
 /**
  *
- * @author CltControl
+ * @author Grupo#2
  */
 public class Mavenproject2 {
 
