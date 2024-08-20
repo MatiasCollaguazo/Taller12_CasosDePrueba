@@ -43,7 +43,6 @@ public class CalculadoraTest {
         double expResult = 0.0;
         double result = instance.suma(a, b);
         assertEquals(expResult, result, 0);
-        fail("The test case is a prototype.");
     }
     
     @Test
@@ -176,7 +175,6 @@ public class CalculadoraTest {
         double expResult = 0.0;
         double result = instance.multiplicacion(a, b);
         assertEquals(expResult, result, 0);
-        fail("The test case is a prototype.");
     }
     
     @Test
@@ -231,7 +229,6 @@ public class CalculadoraTest {
         double expResult = 0.0;
         double result = instance.division(a, b);
         assertEquals(expResult, result, 0);
-        fail("The test case is a prototype.");
     }
 
     @Test
@@ -503,7 +500,6 @@ public class CalculadoraTest {
         boolean expResult = false;
         boolean result = instance.sonAmigos(a, b);
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
 
     @Test
@@ -555,10 +551,69 @@ public class CalculadoraTest {
         System.out.println("sumaDivisores");
         int x = 0;
         Calculadora instance = new Calculadora();
-        int expResult = 0;
+        int expResult = 1;
         int result = instance.sumaDivisores(x);
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
+    
+       @Test
+    public void testSumaDivisores1() {
+        System.out.println("sumaDivisores");
+        int x = 6;
+        Calculadora instance = new Calculadora();
+        int expResult = 6;
+        int result = instance.sumaDivisores(x);
+        assertEquals(expResult, result);
+    }
+    
+       @Test
+    public void testSumaDivisores2() {
+        System.out.println("sumaDivisores");
+        int x = 28;
+        Calculadora instance = new Calculadora();
+        int expResult = 28;
+        int result = instance.sumaDivisores(x);
+        assertEquals(expResult, result);
+    }
+    
+       @Test
+    public void testSumaDivisores3() {
+        System.out.println("sumaDivisores");
+        int x = 12;
+        Calculadora instance = new Calculadora();
+        int expResult = 16;
+        int result = instance.sumaDivisores(x);
+        assertEquals(expResult, result);
+    }
+    
+       @Test
+    public void testSumaDivisores4() {
+        System.out.println("sumaDivisores");
+        int x = 1;
+        Calculadora instance = new Calculadora();
+        int expResult = 1;
+        int result = instance.sumaDivisores(x);
+        assertEquals(expResult, result);   }
+    
+       @Test
+    public void testSumaDivisores5() {
+        System.out.println("sumaDivisores");
+        int x = 0;
+        Calculadora instance = new Calculadora();
+        int expResult = 1;
+        int result = instance.sumaDivisores(x);
+        assertEquals(expResult, result);
+    }
+    
+        @Test
+    public void testSumaDivisores6() {
+        System.out.println("sumaDivisores");
+        int x = -1;
+        Calculadora instance = new Calculadora();
+        int expResult = 1;
+        int result = instance.sumaDivisores(x);
+        assertEquals(expResult, result);
+    }
+    
     
 }
