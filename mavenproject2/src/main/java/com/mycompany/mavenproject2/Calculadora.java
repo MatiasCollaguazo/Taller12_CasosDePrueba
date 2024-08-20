@@ -17,19 +17,27 @@ public class Calculadora {
 
     public double division(double a, double b) {
         if (b == 0) {
-            return 0.0;
+            throw new ArithmeticException();
         }
         return a / b;
     }
 
     public double exponenciacion(double base, double exponente) {
+        if (base == 0 && exponente == 0) {
+            throw new ArithmeticException();
+        }
         return Math.pow(base, exponente);
     }
 
     public double radicacion(double numero, double indice) {
-        if (numero < 0) {
-            return 0.0;
+        if (indice == 0) {
+            throw new ArithmeticException("El índice de radical no puede ser cero, ya que es indefinido.");
         }
+        System.out.println(numero);
+        if (numero < 0 && indice % 2 == 0) {
+            throw new ArithmeticException("No se puede calcular la raíz par de un número negativo.");
+        }
+
         return Math.pow(numero, 1.0 / indice);
     }
 
@@ -41,7 +49,11 @@ public class Calculadora {
 
     public int sumaDivisores(int x)
     {
+        if (x == 0) {
+            return 0;
+        }
         int sum = 1;
+
         for (int i = 2; i <= Math.sqrt(x); i++)
         {
             if (x % i == 0)

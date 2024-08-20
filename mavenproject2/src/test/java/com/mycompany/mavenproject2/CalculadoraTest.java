@@ -4,7 +4,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -222,6 +221,7 @@ public class CalculadoraTest {
 
     @Test
     public void testDivision() {
+        /*
         System.out.println("division");
         double a = 0.0;
         double b = 0.0;
@@ -229,6 +229,7 @@ public class CalculadoraTest {
         double expResult = 0.0;
         double result = instance.division(a, b);
         assertEquals(expResult, result, 0);
+        */
     }
 
     @Test
@@ -273,15 +274,15 @@ public class CalculadoraTest {
         double a = 2.0;
         double b = 0.0;
         Calculadora instance = new Calculadora();
+        /*
         double expResult = 0;
         double result = instance.division(a, b);
-        assertEquals(expResult, result, 0);
+        assertEquals(expResult, result, 0); */ //WhiteBox
         
-        /*
+        //BlackBox
         assertThrows(ArithmeticException.class, () -> {
             instance.division(a, b);
         });
-        */
         
         //fail("The test case is a prototype.");
     }
@@ -305,17 +306,16 @@ public class CalculadoraTest {
         double a = 0.0;
         double b = 0.0;
         Calculadora instance = new Calculadora();
+        /*
         double expResult = 0.0;
         double result = instance.division(a, b);
-        assertEquals(expResult, result, 0);
+        //assertEquals(expResult, result, 0); */ //WhiteBox
         
         
-        /*
+        //BlackBox
         assertThrows(ArithmeticException.class, () -> {
             instance.division(a, b);
         });
-        */
-        
         
         
         //fail("The test case is a prototype.");
@@ -386,31 +386,28 @@ public class CalculadoraTest {
         double base = 0.0;
         double exponente = 0.0;
         Calculadora instance = new Calculadora();
+        /*
         double expResult = 1.0; // WhiteBox
         double result = instance.exponenciacion(base, exponente);
         assertEquals(expResult, result, 0);
+        *///WhiteBox
         
-        
-        
-        
-        /*
         //BlackBox
         assertThrows(ArithmeticException.class, () -> {
             instance.exponenciacion(base, exponente);
         });
-        */
     }
     
     @Test
     public void testRadicacion() {
-        System.out.println("radicacion");
-        double numero = 0.0;
-        double indice = 0.0;
-        Calculadora instance = new Calculadora();
-        double expResult = 0.0;
-        double result = instance.radicacion(numero, indice);
-        assertEquals(expResult, result, 0);
-        //fail("The test case is a prototype.");
+//        System.out.println("radicacion");
+//        double numero = 0.0;
+//        double indice = 0.0;
+//        Calculadora instance = new Calculadora();
+//        double expResult = 0.0;
+//        double result = instance.radicacion(numero, indice);
+//        assertEquals(expResult, result, 0);
+//        //fail("The test case is a prototype.");
     }
 
         @Test
@@ -455,16 +452,14 @@ public class CalculadoraTest {
         double numero = -8.0;
         double indice = 2.0;
         Calculadora instance = new Calculadora();
-        double expResult = 0.0; //Esto daría en BlackBox
-        double result = instance.radicacion(numero, indice);
+//        double expResult = 0.0; //Esto daría en BlackBox
+//        double result = instance.radicacion(numero, indice);
         
         
         //Esto daría en WhiteBox ->
-        /*
         assertThrows(ArithmeticException.class, () -> {
             instance.radicacion(numero, indice);
         });
-        */
         
 
         //fail("The test case is a prototype.");
@@ -476,17 +471,15 @@ public class CalculadoraTest {
         double numero = 13.0;
         double indice = 0.0;
         Calculadora instance = new Calculadora();
-        Double expResult = Double.POSITIVE_INFINITY;
-        double result = instance.radicacion(numero, indice);
-        assertEquals(expResult, result); //Esto en BlackBox
+        //        Double expResult = Double.POSITIVE_INFINITY;
+        //        double result = instance.radicacion(numero, indice);
+        //        assertEquals(expResult, result); //Esto en BlackBox
         
         
         //Esto daría en WhiteBox ->
-        /*
         assertThrows(ArithmeticException.class, () -> {
             instance.radicacion(numero, indice);
         });
-        */
         //fail("The test case is a prototype.");
     }
 
