@@ -600,12 +600,15 @@ public class CalculadoraTest {
         System.out.println("sumaDivisores");
         int x = 0;
         Calculadora instance = new Calculadora();
-        int expResult = 1;
+        int expResult = 1; //BlackBox
         int result = instance.sumaDivisores(x);
         assertEquals(expResult, result);
+        
+        
+        //int expResult =0 //WhiteBox
     }
     
-        @Test
+    @Test
     public void testSumaDivisores6() {
         System.out.println("sumaDivisores");
         int x = -1;
@@ -614,6 +617,6 @@ public class CalculadoraTest {
         int result = instance.sumaDivisores(x);
         assertEquals(expResult, result);
     }
-    
-    
+
+  
 }
