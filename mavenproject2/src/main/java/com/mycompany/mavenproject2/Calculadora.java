@@ -34,8 +34,13 @@ public class Calculadora {
             throw new ArithmeticException("El índice de radical no puede ser cero, ya que es indefinido.");
         }
         System.out.println(numero);
+
         if (numero < 0 && indice % 2 == 0) {
             throw new ArithmeticException("No se puede calcular la raíz par de un número negativo.");
+        }
+
+        if (numero < 0 && indice % 2 != 0) {
+            return -Math.pow(-numero, 1.0 / indice);
         }
 
         return Math.pow(numero, 1.0 / indice);
