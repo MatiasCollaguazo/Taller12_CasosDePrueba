@@ -8,6 +8,6 @@ public class Mavenproject2 {
 
     public static void main(String[] args) {
         Calculadora c = new Calculadora();
-        System.out.println(c.radicacion(2, 0));
+        System.out.println(c.exponenciacion(0, 0));
     }
 }

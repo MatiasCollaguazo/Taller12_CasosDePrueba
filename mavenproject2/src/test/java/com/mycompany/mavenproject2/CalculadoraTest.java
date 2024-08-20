@@ -121,7 +121,7 @@ public class CalculadoraTest {
     
         @Test
     public void testResta1() {
-        System.out.println("resta");
+        System.out.println("TCR01");
         double a = 5.8;
         double b = 3.2;
         Calculadora instance = new Calculadora();
@@ -133,7 +133,7 @@ public class CalculadoraTest {
     
     @Test
     public void testResta2() {
-        System.out.println("resta");
+        System.out.println("TCR02");
         double a = -5.0;
         double b = -3.0;
         Calculadora instance = new Calculadora();
@@ -145,7 +145,7 @@ public class CalculadoraTest {
     
     @Test
     public void testResta3() {
-        System.out.println("resta");
+        System.out.println("TCR03");
         double a = 0.0;
         double b = 5.0;
         Calculadora instance = new Calculadora();
@@ -157,7 +157,7 @@ public class CalculadoraTest {
         
     @Test
     public void testResta4() {
-        System.out.println("resta");
+        System.out.println("TCR04");
         double a = 5.0;
         double b = -3.0;
         Calculadora instance = new Calculadora();
@@ -181,7 +181,7 @@ public class CalculadoraTest {
     
     @Test
     public void testMultiplicacion1() {
-        System.out.println("multiplicacion");
+        System.out.println("TCM01");
         double a = 4.2;
         double b = 2.7;
         Calculadora instance = new Calculadora();
@@ -192,7 +192,7 @@ public class CalculadoraTest {
 
     @Test
     public void testMultiplicacion2() {
-        System.out.println("multiplicacion");
+        System.out.println("TCM02");
         double a = -4.0;
         double b = -2.0 ;
         Calculadora instance = new Calculadora();
@@ -203,7 +203,7 @@ public class CalculadoraTest {
 
     @Test
     public void testMultiplicacion3() {
-        System.out.println("multiplicacion");
+        System.out.println("TCM03");
         double a = 4.0;
         double b = -2.0 ;
         Calculadora instance = new Calculadora();
@@ -213,7 +213,7 @@ public class CalculadoraTest {
     }
     @Test
     public void testMultiplicacion4() {
-        System.out.println("multiplicacion");
+        System.out.println("TCM04");
         double a = 4.0;
         double b = 0.0 ;
         Calculadora instance = new Calculadora();
@@ -269,7 +269,26 @@ public class CalculadoraTest {
         assertEquals(expResult, result, 0);
         //fail("The test case is a prototype.");
     }
-
+    
+    @Test
+    public void testDivision4() {
+        System.out.println("TCD04");
+        double a = 2.0;
+        double b = 0.0;
+        Calculadora instance = new Calculadora();
+        double expResult = 0;
+        double result = instance.division(a, b);
+        assertEquals(expResult, result, 0);
+        
+        /*
+        assertThrows(ArithmeticException.class, () -> {
+            instance.division(a, b);
+        });
+        */
+        
+        //fail("The test case is a prototype.");
+    }
+    
     @Test
     public void testDivision5() {
         System.out.println("TCD05");
@@ -282,33 +301,32 @@ public class CalculadoraTest {
         //fail("The test case is a prototype.");
     }
 
-    @Test
-    public void testDivision4() {
-        System.out.println("TCD04");
-        double a = 2.0;
-        double b = 0.0;
-        Calculadora instance = new Calculadora();
-        double expResult = 0;
-        double result = instance.division(a, b);
-        assertEquals(expResult, result, 0);
-        //fail("The test case is a prototype.");
-    }
     
     @Test
     public void testDivision6() {
-        System.out.println("TCD05");
+        System.out.println("TCD06");
         double a = 0.0;
         double b = 0.0;
         Calculadora instance = new Calculadora();
         double expResult = 0.0;
         double result = instance.division(a, b);
         assertEquals(expResult, result, 0);
+        
+        
+        /*
+        assertThrows(ArithmeticException.class, () -> {
+            instance.division(a, b);
+        });
+        */
+        
+        
+        
         //fail("The test case is a prototype.");
     }
     
     @Test
     public void testDivision7() {
-        System.out.println("TCD05");
+        System.out.println("TCD07");
         double a = 7.0;
         double b = 2.0;
         Calculadora instance = new Calculadora();
@@ -371,11 +389,19 @@ public class CalculadoraTest {
         double base = 0.0;
         double exponente = 0.0;
         Calculadora instance = new Calculadora();
-        //double expResult = NONE;
+        double expResult = 1.0; // WhiteBox
         double result = instance.exponenciacion(base, exponente);
+        assertEquals(expResult, result, 0);
+        
+        
+        
+        
+        /*
+        //BlackBox
         assertThrows(ArithmeticException.class, () -> {
             instance.exponenciacion(base, exponente);
         });
+        */
     }
     
     @Test
